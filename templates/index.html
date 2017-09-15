@@ -9,7 +9,7 @@
   </style>
 </head>
 <body>
-  <h3>Login Here!</h3>
+  <h3>Existing User Login</h3>
   <form id ="login" action='/login' method='POST'>
     <input id="login_email" type="text" name="email" placeholder="Email Address">
     <br>
@@ -17,7 +17,7 @@
     <br>
     <input id="login" type="submit" value="Login">
   </form>
-  <h3>New User</h3>
+  <h3>Register as a New User</h3>
   <form id ="register" action='/register' method='POST'>
     <input id="first_name" type="text" name="first_name" placeholder="First Name">
     <br>
@@ -38,5 +38,6 @@
   {% endfor %}
   {% endif %}
   {% endwith %}
+  <img src="{{url_for('static', filename='img/Peanut-butter-jelly-time.gif')}}" />
 </body>
 </html>

@@ -18,7 +18,7 @@
       <hr>
       {% if messages %}
         {% for entry in messages %}
-          <h4 class = "message_attributes">{{entry['first_name'].capitalize()}} {{ entry['last_name'].capitalize()}} - {{entry['message_time'].strftime('%H:%M%p on %B %w, %Y')}}</h4>
+          <h4 class = "message_attributes">{{entry['first_name'].capitalize()}} {{ entry['last_name'].capitalize()}} - {{entry['message_time'].strftime('%I:%M%p on %B %w, %Y')}}</h4>
           <p class = "message">{{entry['message']}}</p>
           {% if user['id'] == entry['user_id'] %}
           <form action="/messages/{{entry['id']}}/delete" method="POST">
@@ -28,7 +28,7 @@
           {% if comments %}
             {% for comment in comments %}
               {% if entry['msg_id'] == comment['msg_id'] %}
-              <h4 style="margin-left:20px" class = "comment_attributes">{{comment['first_name'].capitalize()}} {{comment['last_name'].capitalize()}} - {{comment['comment_time'].strftime('%m/%d/%y at %H:%M%p')}}</h4>
+              <h4 style="margin-left:20px" class = "comment_attributes">{{comment['first_name'].capitalize()}} {{comment['last_name'].capitalize()}} - {{comment['comment_time'].strftime('%m/%d/%y at %H:%M')}}</h4>
               <p style="color:blue;font-style:italic;margin-left:20px" class = "comment">{{comment['comment']}}</p>
                 {% if user['id'] == comment['user_id'] %}
                 <form style="margin-left:20px" action="/comments/{{comment['id']}}/delete" method="POST">
